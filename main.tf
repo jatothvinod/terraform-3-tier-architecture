@@ -138,7 +138,7 @@ resource "aws_instance" "webserver1" {
   ami                    = "ami-08fe36427228eddc4"
   instance_type          = "t2.micro"
   availability_zone      = "ap-south-1a"
-  key_name               = "iam.pem"
+  key_name               = "iam"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-1.id
   user_data              = "${file("apache.sh")}"
@@ -152,7 +152,7 @@ resource "aws_instance" "webserver2" {
   ami                    = "ami-08fe36427228eddc4"
   instance_type          = "t2.micro"
   availability_zone      = "ap-south-1b"
-  key_name               = "iam.pem"
+  key_name               = "iam"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-2.id
   user_data              = "${file("apache.sh")}"
